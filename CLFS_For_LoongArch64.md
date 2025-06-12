@@ -820,8 +820,8 @@ popd
 ### 3.25 MarkupSafe
 
 ```sh
-tar xvf ${DOWNLOADDIR}/markupsafe-3.0.2.tar.gz -C ${BUILD_DIRECTORY}
-pushd ${BUILD_DIRECTORY}/markupsafe-3.0.2
+tar xvf ${DOWNLOADDIR}/markupsafe-3.0.2.tar.gz -C ${BUILDDIR}
+pushd ${BUILDDIR}/markupsafe-3.0.2
 	${SYSDIR}/cross-tools/bin/pip3 wheel -w dist --no-build-isolation --no-deps ${PWD}
 	${SYSDIR}/cross-tools/bin/pip3 install --no-index --find-links dist --no-cache-dir --no-deps --force-reinstall --no-user MarkupSafe
 popd
@@ -1115,7 +1115,7 @@ popd
 
 ```sh
 tar xvf ${DOWNLOADDIR}/SCons-4.9.1.tar.gz -C ${BUILDDIR}
-pushd ${BUILDDIR}/SCons-4.9.1
+pushd ${BUILDDIR}/scons-4.9.1
     ${SYSDIR}/cross-tools/bin/python3 setup.py build
     ${SYSDIR}/cross-tools/bin/python3 setup.py install --optimize=1
 popd
@@ -1232,7 +1232,7 @@ popd
 　　为了在交叉编译的环境下可以制作生成LoongArch机器上使用的EFI启动文件，我们在交叉工具链目录中存放一个可以生成目标机器EFI的Grub软件包。
 
 ```sh
-tar -xvf ${DOWNLOADDIR}/grub-2.12.tar.gz -C ${BUILDDIR}
+tar -xvf ${DOWNLOADDIR}/grub-2.12.tar.xz -C ${BUILDDIR}
 pushd ${BUILDDIR}/grub-2.12
 	mkdir build
 	pushd build
